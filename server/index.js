@@ -10,6 +10,9 @@ const {runCode} = require('./runCode');
 compiler.init(options);
 app.use(cors());
 app.use(express.json());
+app.get('/', (req,res)=>{
+    return res.send("<h1>HELLO COMPILER</h1>")
+})
 app.post('/compile', (req,res)=>{
     const code = req.body.code;
     const input= req.body.input;
