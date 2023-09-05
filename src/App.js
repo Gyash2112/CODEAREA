@@ -72,7 +72,7 @@ print(fun())
  function showValue() {
    
   setLoading(true);
-  axios.post(`http://localhost:8000/compile`, {
+  axios.post(`http://54.83.96.204:8000/compile`, {
     code: editorRef.current.getValue(),
     language: lang,
     input:input

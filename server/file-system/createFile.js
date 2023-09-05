@@ -26,7 +26,7 @@ const createFile = async (lang, code)=>{
     const fileName = `${jobId}.${lang}`;
     const filePath =  join(process.cwd(),`codes/${fileName}`);
 
-    await writeFileSync(filePath,code?.toString());
+    await writeFileSync(filePath,code.toString());
 
     return {
         fileName,
