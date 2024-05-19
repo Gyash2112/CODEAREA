@@ -3,6 +3,8 @@ import { useState } from 'react'
 import logo from '../assets/nav-logo.png'
 import {FaXmark, FaBars} from 'react-icons/fa6';
 import {Link} from 'react-scroll';
+import {Link as Link1} from 'react-router-dom'
+import {Outlet} from 'react-router-dom'
 const Navbar = () => {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,7 +17,6 @@ const Navbar = () => {
         {link: "Overview" , path:"home"},
         {link:"Feature", path:"feature"},
         {link:"About", path:"about"},
-        {link:"Problems" , path:"problems"}
     ]
 
 
@@ -32,8 +33,9 @@ const Navbar = () => {
 
                     <ul className='md:flex space-x-12 hidden'>
                         {
-                            navItems.map(({link,path})=> <Link activeClass='active' spy={true} smooth={true} offset={-90} key={link} to={path} className='block hover:text-gray-300 cursor-pointer'>{link}</Link>)
+                            navItems.map(({link,path})=> <Link1 activeClass='active' spy={true} smooth={true} offset={-90} key={link} to={path} className='block hover:text-gray-300 cursor-pointer'>{link}</Link1>)
                         }
+                        <Link1 to="/onlineIde">IDE</Link1>
                     </ul>
                 </div>
 
@@ -65,6 +67,8 @@ const Navbar = () => {
     }
         
     </div>
+
+    <Outlet/>
 
     </>
     
